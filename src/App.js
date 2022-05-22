@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { Suspense, useRef, useState } from "react";
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import { Environment, Stage, OrbitControls, useGLTF } from "@react-three/drei";
+import { Environment, Stage, OrbitControls, useGLTF } from "@react-three/drei"; 
 
 function Model(props) {
   const group = useRef();
@@ -9,9 +10,6 @@ function Model(props) {
   console.log("nodes.material", nodes?.Blender_AMD_TRY.material);
   console.log("nodes.geometry", nodes?.Blender_AMD_TRY.geometry);
 
-  // nodes.Blender_AMD_TRY.material.color = { r: 255, g: 255, b: 255 };
-
-  // console.log("materials", materials);
 
   return (
     <group
@@ -38,8 +36,8 @@ useGLTF.preload("/klout.glb");
 
 function App() {
   const [color, setColor] = useState("white");
-
   const ref = useRef();
+
   return (
     <div
       id="canvas-container"
@@ -59,10 +57,10 @@ function App() {
         <OrbitControls ref={ref} autoRotate />
       </Canvas>
 
-      <div class="flex-center">
-        <div class="social-links">
+      <div className="flex-center">
+        <div className="social-links">
           <div
-            class="social-btn flex-center"
+            className="social-btn flex-center"
             id="linkedin"
             style={{ background: "white" }}
             onClick={() => setColor("white")}
@@ -71,7 +69,7 @@ function App() {
           </div>
 
           <div
-            class="social-btn flex-center"
+            className="social-btn flex-center"
             id="linkedin"
             style={{ background: "#C2C2C2" }}
             onClick={() => setColor("#C2C2C2")}
@@ -80,7 +78,7 @@ function App() {
           </div>
 
           <div
-            class="social-btn flex-center"
+            className="social-btn flex-center"
             id="github"
             style={{ background: "#3A3A3A" }}
             onClick={() => setColor("#3A3A3A")}
@@ -89,7 +87,7 @@ function App() {
           </div>
 
           <div
-            class="social-btn flex-center"
+            className="social-btn flex-center"
             id="github"
             style={{ background: "#9D23CE" }}
             onClick={() => setColor("#9D23CE")}
@@ -97,7 +95,7 @@ function App() {
             <span>Purple</span>
           </div>
           <div
-            class="social-btn flex-center"
+            className="social-btn flex-center"
             id="github"
             style={{ background: "#0B7AC3" }}
             onClick={() => setColor("#0B7AC3")}
@@ -105,7 +103,7 @@ function App() {
             <span>Blue</span>
           </div>
           <div
-            class="social-btn flex-center"
+            className="social-btn flex-center"
             id="twitter"
             style={{ background: "#FF5733" }}
             onClick={() => setColor("#FF5733")}
