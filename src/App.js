@@ -1,15 +1,17 @@
-/* eslint-disable no-unused-vars */
 import React, { Suspense, useRef, useState } from "react";
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import { Environment, Stage, OrbitControls, useGLTF } from "@react-three/drei"; 
+import { Environment, Stage, OrbitControls, useGLTF } from "@react-three/drei";
 
 function Model(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/klout.glb");
-  console.log("nodes.material", nodes?.Blender_AMD_TRY.material);
-  console.log("nodes.geometry", nodes?.Blender_AMD_TRY.geometry);
+  // console.log("nodes.material", nodes?.Blender_AMD_TRY.material);
+  // console.log("nodes.geometry", nodes?.Blender_AMD_TRY.geometry);
 
+  // nodes.Blender_AMD_TRY.material.color = { r: 255, g: 255, b: 255 };
+
+  // console.log("materials", materials);
 
   return (
     <group
@@ -36,8 +38,8 @@ useGLTF.preload("/klout.glb");
 
 function App() {
   const [color, setColor] = useState("white");
-  const ref = useRef();
 
+  const ref = useRef();
   return (
     <div
       id="canvas-container"
